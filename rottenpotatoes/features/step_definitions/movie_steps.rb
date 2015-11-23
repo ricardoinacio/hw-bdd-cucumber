@@ -23,7 +23,18 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
+  found_e1 = false
+  found_e2 = false
+  e1_before_e2 = nil
+  page.all('#movies tbody tr td').each do |td| 
+    if td.text == e1
+      found_e1 = true
+      e1_before_e2 = found_e2 ? false : true
+    elsif td.text == e2
+      found_e2 = true
+    end
+  end
+  fail "#{e1} not before #{e2}." unless e1_before_e2
 end
 
 # Make it easier to express checking or unchecking several boxes at once
