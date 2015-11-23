@@ -654,3 +654,22 @@ Started GET "/assets/jquery.self.js?body=1" for 191.179.180.125 at 2015-11-23 01
 
 Started GET "/assets/application.self.js?body=1" for 191.179.180.125 at 2015-11-23 01:42:35 +0000
   [1m[36mMovie Load (1.7ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+
+
+Started GET "/movies" for 191.179.180.125 at 2015-11-23 02:03:41 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 191.179.180.125 at 2015-11-23 02:03:42 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 191.179.180.125 at 2015-11-23 02:03:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 191.179.180.125 at 2015-11-23 02:03:42 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 191.179.180.125 at 2015-11-23 02:03:42 +0000
